@@ -11,6 +11,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'partials/navigate'%>
+    <%= render 'partials/notice'%>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
