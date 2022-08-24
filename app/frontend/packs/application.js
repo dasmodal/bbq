@@ -10,7 +10,9 @@ import "channels"
 
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
-import 'stylesheets/application'
+import '../stylesheets/application'
+
+const immages = require.context('../images', true)
 
 Rails.start()
 Turbolinks.start()
