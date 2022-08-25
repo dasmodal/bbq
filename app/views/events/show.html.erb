@@ -15,9 +15,16 @@
           </div>
 
           <% if current_user_can_edit?(@event) %>
-            <div class="my-3">
-              <%= link_to 'Изменить', edit_event_path(@event),
-                class: 'btn btn-primary' %>
+            <div class="row justify-content-start">
+              <div class="col-auto my-3">
+                <%= link_to 'Изменить', edit_event_path(@event),
+                  class: 'btn btn-primary' %>
+              </div>
+              <div class="col-auto my-3">
+                <%= button_to 'Удалить', event_path(@event),
+                  method: :delete, data: {confirm: 'Вы уверены что хотите удалить событие?'},
+                  class: 'btn btn-primary' %>
+              </div>
             </div>
           <% end %>
         </div>
