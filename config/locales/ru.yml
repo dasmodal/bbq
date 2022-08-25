@@ -25,3 +25,7 @@ ru:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
+  forms:
+    users:
+      sign_up: 'Регистрация'
+      log_in: 'Войти'
