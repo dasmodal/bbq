@@ -1,17 +1,19 @@
-<%= form_with(model: user, html: {multipart: true}) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="row mb-4">
+  <div class="col">
+    <%= form_with(model: user, html: {multipart: true}) do |form| %>
+      <%= render 'error_messages', user: user %>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
+      <div class="mb-3">
+        <%= form.label :name, class: 'form-lable' %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :email, class: 'form-lable' %>
+        <%= form.email_field :email, class: 'form-control' %>
+      </div>
+      <div class="actions">
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
