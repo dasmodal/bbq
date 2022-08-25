@@ -1,5 +1,9 @@
 <% if notice %>
-  <div id="notice" class="alert alert-success" role="alert">
-    <%= notice %>
+  <div class="alert alert-success alert-dismissible fade show d-flex" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+      <%= notice %>
+    </div>
+    <button class="btn-close" type="button" data-bs-dismiss="alert" area-label="Closer"></button>
   </div>
 <% end %>
