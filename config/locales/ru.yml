@@ -21,3 +21,7 @@ ru:
       destroyed: 'Событие было удаленно'
     users:
       updated: 'Вы обновили свой профиль'
+  form_errors:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
