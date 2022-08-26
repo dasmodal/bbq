@@ -17,12 +17,12 @@
           <% if current_user_can_edit?(@event) %>
             <div class="row justify-content-start">
               <div class="col-auto my-3">
-                <%= link_to 'Изменить', edit_event_path(@event),
+                <%= link_to t('views.events.change_action'), edit_event_path(@event),
                   class: 'btn btn-primary' %>
               </div>
               <div class="col-auto my-3">
-                <%= button_to 'Удалить', event_path(@event),
-                  method: :delete, data: {confirm: 'Вы уверены что хотите удалить событие?'},
+                <%= button_to t('views.events.delete_action'), event_path(@event),
+                  method: :delete, data: {confirm: t('views.events.delete_confirm')},
                   class: 'btn btn-primary' %>
               </div>
             </div>

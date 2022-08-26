@@ -21,6 +21,12 @@ ru:
       destroyed: 'Событие было удаленно'
     users:
       updated: 'Вы обновили свой профиль'
+  views:
+    events:
+      delete_action: 'Удалить'
+      delete_confirm: 'Вы уверены что хотите удалить событие?'
+      change: 'Редактирование события'
+      change_action: 'Изменить'
   form_errors:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
