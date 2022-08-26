@@ -29,3 +29,5 @@ ru:
     users:
       sign_up: 'Регистрация'
       log_in: 'Войти'
+      change_password: 'Смена пароля'
+      change_password_action: 'Сменить пароль'

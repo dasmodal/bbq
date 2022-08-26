@@ -11,8 +11,12 @@
         <%= form.label :email, class: 'form-lable' %>
         <%= form.email_field :email, class: 'form-control' %>
       </div>
-      <div class="actions">
+      <div class="actions mb-3">
         <%= form.submit class: 'btn btn-primary' %>
+      </div>
+
+      <div>
+        <%= link_to t('forms.users.change_password_action'), edit_user_registration_path %>
       </div>
     <% end %>
   </div>
