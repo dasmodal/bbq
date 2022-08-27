@@ -25,6 +25,10 @@ ru:
       created: 'Ваш коммент добавлен'
       destroyed: 'Комментарий удалён'
       error: 'Ошибка с комментарием'
+    subscription:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
   views:
     events:
       delete_action: 'Удалить'
@@ -45,4 +49,7 @@ ru:
       forget_password_action: 'Отправить инструкцию по сбросу пароля'
   comments:
     comment:
-      destory_cofirm: 'Вы уверены, что хотите удалить этот коммент?'
+      destroy_confirm: 'Вы уверены, что хотите удалить этот коммент?'
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
