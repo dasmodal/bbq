@@ -21,6 +21,10 @@ ru:
       destroyed: 'Событие было удаленно'
     users:
       updated: 'Вы обновили свой профиль'
+    comments:
+      created: 'Ваш коммент добавлен'
+      destroyed: 'Комментарий удалён'
+      error: 'Ошибка с комментарием'
   views:
     events:
       delete_action: 'Удалить'
@@ -39,3 +43,6 @@ ru:
       change_password_action: 'Сменить пароль'
       forget_password: 'Забыли пароль?'
       forget_password_action: 'Отправить инструкцию по сбросу пароля'
+  comments:
+    comment:
+      destory_cofirm: 'Вы уверены, что хотите удалить этот коммент?'
