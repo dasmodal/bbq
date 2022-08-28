@@ -14,6 +14,10 @@ ru:
         address: 'Адрес'
         datetime: 'Дата и время'
         description: 'Описание'
+      subscription:
+        user: 'Пользователь'
+        user_name: 'Имя пользователя'
+        user_email: 'Email пользователя'
   controllers:
     events:
       created: 'Событие было успешно создано'
@@ -30,7 +34,7 @@ ru:
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
       user_cant_subscribe_to_self_event: 'Вы не можете подписаться на своё событие'
-      user_email_already_exists: 'Пользователь с таким email уже зарегистрирован'
+      user_email_already_exists: 'уже зарегистрирован другим пользователем'
   views:
     events:
       delete_action: 'Удалить'
