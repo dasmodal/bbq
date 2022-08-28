@@ -29,6 +29,7 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+      user_cant_subscribe_to_self_event: 'Вы не можете подписаться на своё событие'
   views:
     events:
       delete_action: 'Удалить'
