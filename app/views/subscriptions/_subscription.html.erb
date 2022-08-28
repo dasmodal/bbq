@@ -7,7 +7,7 @@
         <%= subscription.user_name %>
       <% end %>
       <% if current_user_can_edit?(subscription) %>
-        <%= link_to 'Удалить', event_subscription_path(subscription.event, subscription),
+        <%= link_to bootstrap_icon('trash', fill: 'red'), event_subscription_path(subscription.event, subscription),
           class: 'ms-3', method: :delete, data: { confirm: t('.destroy_confirm') }
         %>
       <% end %>
