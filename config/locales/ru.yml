@@ -41,6 +41,10 @@ ru:
       delete_confirm: 'Вы уверены что хотите удалить событие?'
       change: 'Редактирование события'
       change_action: 'Изменить'
+    subscriptions:
+      call: 'Зовёт'
+      will_go: 'Пойдут'
+      i_will_go: 'Я пойду'
   form_errors:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
@@ -53,6 +57,8 @@ ru:
       change_password_action: 'Сменить пароль'
       forget_password: 'Забыли пароль?'
       forget_password_action: 'Отправить инструкцию по сбросу пароля'
+    subscriptions:
+      subscribe: 'Подписаться'
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот коммент?'

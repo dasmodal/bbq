@@ -1,12 +1,16 @@
 <span class="subsription">
-  <% if subscription.user.present? %>
-    <%= render partial: 'users/user', object: subscription.user %>
-  <% else %>
-    <em><%= subscription.user_name %></em>
-  <% end %>
-  <% if current_user_can_edit?(subscription) %>
-    <%= link_to 'Удалить', event_subscription_path(subscription.event, subscription),
-      method: :delete, data: { confirm: t('.destroy_confirm') }
-    %>
-  <% end %>
+  <ul mb-0>
+    <li>
+      <% if subscription.user.present? %>
+        <%= render partial: 'users/user', object: subscription.user %>
+      <% else %>
+        <%= subscription.user_name %>
+      <% end %>
+      <% if current_user_can_edit?(subscription) %>
+        <%= link_to 'Удалить', event_subscription_path(subscription.event, subscription),
+          class: 'ms-3', method: :delete, data: { confirm: t('.destroy_confirm') }
+        %>
+      <% end %>
+    </li>
+  </ul>
 </span>
