@@ -11,7 +11,7 @@
             <%= link_to 'Профиль', current_user, class: 'nav-link actice' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link actice' %>
+            <%= button_to 'Выйти', destroy_user_session_path, method: :delete, class: 'btn nav-link actice' %>
           </li>
         <% else %>
           <%= link_to 'Войти', new_user_session_path, class: 'nav-link actice' %>
