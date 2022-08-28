@@ -30,6 +30,7 @@ ru:
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
       user_cant_subscribe_to_self_event: 'Вы не можете подписаться на своё событие'
+      user_email_already_exists: 'Пользователь с таким email уже зарегистрирован'
   views:
     events:
       delete_action: 'Удалить'
