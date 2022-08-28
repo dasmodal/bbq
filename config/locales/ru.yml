@@ -18,6 +18,9 @@ ru:
         user: 'Пользователь'
         user_name: 'Имя пользователя'
         user_email: 'Email пользователя'
+      comment:
+        body: 'Комментарий'
+        user_name: 'Имя пользователя'
   controllers:
     events:
       created: 'Событие было успешно создано'
@@ -59,6 +62,8 @@ ru:
       forget_password_action: 'Отправить инструкцию по сбросу пароля'
     subscriptions:
       subscribe: 'Подписаться'
+    comments:
+      send: 'Отправить'
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот коммент?'
