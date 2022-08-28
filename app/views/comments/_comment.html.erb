@@ -16,4 +16,10 @@
       <%= comment.body %>
     </div>
   </div>
+  <% if current_user_can_edit?(comment) %>
+    <div class="row text-end">
+      <%= link_to bootstrap_icon('trash', fill: 'red'), event_comment_path(comment.event, comment),
+        method: :delete, data: { confirm: t('.destroy_confirm') } %>
+    </div>
+  <% end %>
 </div>
