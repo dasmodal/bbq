@@ -1,6 +1,27 @@
 module ApplicationHelper
   def user_avatar(user)
-    # TODO
-    asset_pack_path 'media/images/user.png'
+    if user.avatar?
+      user.avatar.url
+    else
+      asset_pack_path 'media/images/user.png'
+    end
+  end
+
+  def user_avatar_thumb(user)
+    if user.avatar.file.present?
+      user.avatar.thumb.url
+    else
+      asset_pack_path 'media/images/user.png'
+    end
+  end
+
+  def event_photo(event)
+    photos = event.photos.persisted
+
+    if photo.any?
+      photo.sample.photo.url
+    else
+      asset_pack_path 'media/images/event.jpg'
+    end
   end
 end

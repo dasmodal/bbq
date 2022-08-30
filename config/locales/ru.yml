@@ -7,6 +7,7 @@ ru:
       user:
         email: 'Email'
         name: 'Имя'
+        avatar: 'Аватар'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
       event:
@@ -36,6 +37,10 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фото'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фото'
   views:
     events:
       delete_action: 'Удалить'
@@ -62,6 +67,8 @@ ru:
       subscribe: 'Подписаться'
     comments:
       send: 'Отправить'
+    photos:
+      upload: 'Загрузить'
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот коммент?'
