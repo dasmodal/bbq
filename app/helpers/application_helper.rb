@@ -1,5 +1,6 @@
 module ApplicationHelper
   def user_avatar(user)
+<<<<<<< HEAD
     if user.avatar?
       user.avatar.url
     else
@@ -23,5 +24,9 @@ module ApplicationHelper
     else
       asset_pack_path 'media/images/event.jpg'
     end
+=======
+    # TODO
+    asset_pack_path 'media/images/user.png'
+>>>>>>> parent of ac55893... feature/ users can upload avatar and event photos
   end
 end

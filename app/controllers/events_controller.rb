@@ -8,7 +8,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    @new_photo = @event.photos.build(params[:photo])
   end
 
   def new

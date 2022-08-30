@@ -12,8 +12,6 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'bootstrap-icons-helper'
-gem 'carrierwave'
-gem 'rmagick'
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
