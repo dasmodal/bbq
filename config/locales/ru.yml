@@ -3,6 +3,7 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      photo: 'Фотография'
     attributes:
       user:
         email: 'Email'
@@ -22,6 +23,8 @@ ru:
       comment:
         body: 'Комментарий'
         user_name: 'Имя пользователя'
+      photo:
+        photo: 'Фотография'
   controllers:
     events:
       created: 'Событие было успешно создано'
