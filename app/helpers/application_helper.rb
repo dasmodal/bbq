@@ -18,8 +18,8 @@ module ApplicationHelper
   def event_photo(event)
     photos = event.photos.persisted
 
-    if photo.any?
-      photo.sample.photo.url
+    if photos.any?
+      photos.sample.photo.url
     else
       asset_pack_path 'media/images/event.jpg'
     end
