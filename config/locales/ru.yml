@@ -24,6 +24,14 @@ ru:
         user_name: 'Имя пользователя'
       photo:
         photo: 'Фотография'
+    errors:
+      models:
+        subscription:
+          attributes:
+            user:
+              self_event: 'не может подписываться на своё событие'
+            user_email:
+              email_exists: 'уже зарегистрирован другим пользователем'
   controllers:
     events:
       created: 'Событие было успешно создано'
@@ -71,5 +79,3 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
-  self_event: 'Вы не можете подписаться на своё событие'
-  email_exists: 'уже зарегистрирован другим пользователем'
