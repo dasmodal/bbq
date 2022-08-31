@@ -22,13 +22,13 @@ class Subscription < ApplicationRecord
 
   def user_is_event_author
     if user == event.user
-      errors.add(:user, I18n.t(:self_event))
+      errors.add(:user, :self_event)
     end
   end
 
   def user_email_already_exists
     if User.find_by(email: user_email).present?
-      errors.add(:user_email, I18n.t(:email_exists))
+      errors.add(:user_email, :email_exists)
     end
   end
 end
