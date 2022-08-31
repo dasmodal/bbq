@@ -18,7 +18,7 @@ class User < ApplicationRecord
     self.name = "Товарищ#{rand(777)}" if self.name.blank?
   end
 
-  def link_subsciptions
+  def link_subscriptions
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
   end
 end
