@@ -11,6 +11,10 @@
         <%= form.label :email, class: 'form-lable' %>
         <%= form.email_field :email, class: 'form-control' %>
       </div>
+      <div class="mb-3">
+        <%= form.label :avatar, class: 'form-lable' %>
+        <%= form.file_field :avatar, class: 'form-control' %>
+      </div>
       <div class="actions mb-3">
         <%= form.submit class: 'btn btn-primary' %>
       </div>
