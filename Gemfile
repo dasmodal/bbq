@@ -12,7 +12,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'image_processing', '>= 1.2'
-gem 'aws-sdk-s3', require: false
+gem 'mailjet'
 gem 'bootstrap-icons-helper'
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
@@ -30,9 +30,11 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   gem 'spring'
+  gem 'letter_opener'
 end
 
 group :production do
+  gem 'aws-sdk-s3', require: false
   gem 'pg'
 end
 

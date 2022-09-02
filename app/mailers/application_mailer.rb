@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'bbq-rails6@yandex.ru'
+  default from: Rails.application.credentials.dig(:mailjet, :sender)
   layout 'mailer'
 end
