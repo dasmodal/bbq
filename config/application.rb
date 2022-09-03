@@ -29,6 +29,7 @@ module Bbq
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
+    config.active_storage.replace_on_assign_to_many = false
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ru
