@@ -36,6 +36,11 @@
     <%= form.file_field :bg_photo, class: 'form-control' %>
   </div>
 
+  <div class="mt-2">
+    <%= form.label :photos %>
+    <%= form.file_field :photos, class: 'form-control' %>
+  </div>
+
   <div class="my-3">
     <%= form.submit 'Сохранить', class: 'btn btn-primary' %>
     или <%= link_to 'вернуться', :back %>

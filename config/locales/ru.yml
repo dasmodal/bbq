@@ -15,6 +15,8 @@ ru:
         address: 'Адрес'
         datetime: 'Дата и время'
         description: 'Описание'
+        bg_photo: 'Фон события'
+        photos: 'Фотографии события'
       subscription:
         user: 'Пользователь'
         user_name: 'Имя пользователя'
@@ -47,12 +49,18 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что то не так с загрузкой фотографии'
+      created: 'Вы добавили фотографию'
+      destroyed: 'Фотография удаленна'
   views:
     events:
       delete_action: 'Удалить'
       delete_confirm: 'Вы уверены что хотите удалить событие?'
       change: 'Редактирование события'
       change_action: 'Изменить'
+    photos:
+      added: 'Добавленно'
     subscriptions:
       call: 'Зовёт'
       will_go: 'Пойдут'

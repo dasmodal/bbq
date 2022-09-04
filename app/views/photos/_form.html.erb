@@ -1,0 +1,12 @@
+<%= form_with(model: [@event, photo]) do |form| %>
+  <%= render partial: 'partials/form_errors', locals: { model: photo } %>
+
+  <div class="mt-2">
+    <%= form.label :photo, class: 'form-lable' %>
+    <%= form.file_field :photo, class: 'form-control' %>
+  </div>
+
+  <div class="mt-2">
+    <%= form.submit 'Загрузить', class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -4,8 +4,8 @@ class Event < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
   has_many :subscribers, through: :subscriptions, source: :user
+  has_many :photos
   has_one_attached :bg_photo
-  has_many_attached :photos
   
   validates :title, presence: true, length: {maximum: 255}
   validates :address, presence: true

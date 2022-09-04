@@ -2,7 +2,6 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, only: %i[show]
   before_action :set_current_user_event, only: %i[edit update destroy]
-  after_action :attach_photo, only: %i[create update]
 
   def index
     @events = Event.all
@@ -42,10 +41,6 @@ class EventsController < ApplicationController
   end
 
   private
-
-  def attach_photo
-    @event.photos.attach(params[:event][:photos])
-  end
 
   def set_event
     @event = Event.find(params[:id])
