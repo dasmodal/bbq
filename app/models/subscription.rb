@@ -2,23 +2,28 @@ class Subscription < ApplicationRecord
   belongs_to :event
   belongs_to :user, optional: true
 
-  validates :event, presence: true
-  validates :user_name, presence: true, unless: -> { user.present? }
-  validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/,
-    unless: -> { user.present? }
+  with_options if: -> { user.present? } do |user|
+    user.validates :user, uniqueness: { scope: :event_id }
+  end
 
-  validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
-  validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
+  with_options unless: -> { user.present? } do |user|
+    user.validates :user_name, presence: true
+    user.validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
+    user.validates :user_email, uniqueness: { scope: :event_id }
+    user.validate :user_email_already_exists
+  end
+
   validate :user_is_event_author
-  validate :user_email_already_exists, unless: -> { user.present? }
 
   def user_name
-    user.present? ? user.name : super
+    user&.name || super
   end
 
   def user_email
-    user.present? ? user.email : super
+    user&.email || super
   end
+
+  private
 
   def user_is_event_author
     if user == event.user
