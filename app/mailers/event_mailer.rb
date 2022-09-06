@@ -29,7 +29,7 @@ class EventMailer < ApplicationMailer
   def photo(event, photo, email)
     @event = event
     @user = photo.user
-    @photo = photo
+    @photo = photo.photo.variant(resize_to_fit: [500, 500])
 
     mail to: email, subject: "Новая фотография @ #{event.title}"
   end
