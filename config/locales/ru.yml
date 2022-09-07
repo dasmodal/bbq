@@ -16,6 +16,7 @@ ru:
         address: 'Адрес'
         datetime: 'Дата и время'
         description: 'Описание'
+        pincode: 'Пинкод доступа'
         bg_photo: 'Фон события'
         photos: 'Фотографии события'
       subscription:
@@ -40,6 +41,7 @@ ru:
       created: 'Событие было успешно создано'
       updated: 'Событие было успешно обновлено'
       destroyed: 'Событие было удаленно'
+      wrong_pincode: 'Неверный пинкод'
     users:
       updated: 'Вы обновили свой профиль'
     comments:
@@ -82,6 +84,11 @@ ru:
       subscribe: 'Подписаться'
     comments:
       send: 'Отправить'
+    pincode:
+      title: 'Доступ к событию только по пин-коду'
+      pincode: 'Пинкод'
+      enter: 'Отправить'
+      to_home_page: 'На главную'
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот коммент?'
