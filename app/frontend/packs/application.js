@@ -11,6 +11,8 @@ import "channels"
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
 import '../stylesheets/application'
+import 'air-datepicker/air-datepicker.js'
+import 'air-datepicker/air-datepicker.css'
 
 const immages = require.context('../images', true)
 
