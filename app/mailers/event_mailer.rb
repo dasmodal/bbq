@@ -5,13 +5,12 @@ class EventMailer < ApplicationMailer
   #
   #   en.event_mailer.subscription.subject
   #
-  def subscription(event, subscription)
+  def subscription(subscription)
     @email = subscription.user_email
     @name = subscription.user_name
-    @event = event
-    @greeting = "Hi"
+    @event = subscription.event
 
-    mail to: event.user.email, subject: default_i18n_subject(title: @event.title)
+    mail to: @event.user.email, subject: default_i18n_subject(title: @event.title)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
