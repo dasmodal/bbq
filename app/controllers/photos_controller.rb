@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
     @new_photo = @event.photos.build(photo_params)
     @new_photo.user = current_user
 
-    if params[:photo] && @new_photo.save #TODO remove params to model validate
+    if @new_photo.save
       notify_subscribers(@event, @new_photo)
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
