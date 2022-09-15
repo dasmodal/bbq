@@ -5,7 +5,6 @@
 Email: <%=  @email %>
 
 ----------------------
-
-Событие: <%= @event.title %>
-Состоится: <%= l @event.datetime %>
-Организатор: <%= @event.user.name %>
+<%= t '.event' %>: <%= link_to @event.title, @event %>
+<%= t '.datetime' %>: <%= l @event.datetime %>
+<%= t '.owner' %>: <%= @event.user.name %>
