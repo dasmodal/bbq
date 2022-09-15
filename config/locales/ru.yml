@@ -122,6 +122,12 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+  partials:
+    navigate:
+      profile: 'Профиль'
+      sign_in: 'Войти'
+      sign_up: 'Зарегистрироваться'
+      sign_out: 'Выйти'
   events:
     index:
       title: 'События'
