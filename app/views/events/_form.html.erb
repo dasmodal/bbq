@@ -11,11 +11,6 @@
     </div>
   <% end %>
 
-  <!-- try to link calendar -->
-  <div>
-    <input type="text" name="" id="dp">
-  </div>
-
   <div class="mt-2">
     <%= form.label :title %>
     <%= form.text_field :title, class: 'form-control' %>
@@ -28,7 +23,8 @@
 
   <div class="mt-2">
     <%= form.label :datetime %>
-    <p><%= form.datetime_select :datetime, class: 'form-control' %></p>
+    <p><%= form.text_field :datetime, class: 'form-control',
+      value: "#{l(event.datetime, format: :long)}", id: 'dp' %></p>
   </div>
 
   <div class="mt-2">

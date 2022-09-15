@@ -8,14 +8,13 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-import 'bootstrap/dist/js/bootstrap'
-import 'bootstrap/dist/css/bootstrap'
-import '../stylesheets/application'
-import 'air-datepicker/air-datepicker.js'
-import 'air-datepicker/air-datepicker.css'
-
-const immages = require.context('../images', true)
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import 'bootstrap/dist/js/bootstrap'
+import 'bootstrap/dist/css/bootstrap'
+import '../stylesheets/application'
+import '../scripts/event-datepicker.js'
+
+const immages = require.context('../images', true)
