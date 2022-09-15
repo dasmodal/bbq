@@ -11,7 +11,7 @@ class EventMailer < ApplicationMailer
     @event = event
     @greeting = "Hi"
 
-    mail to: event.user.email,subject: "Новая подписка на #{event.title}"
+    mail to: event.user.email, subject: default_i18n_subject(title: @event.title)
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -23,7 +23,7 @@ class EventMailer < ApplicationMailer
     @comment = comment
     @event = comment.event
 
-    mail to: email, subject: "Новый комментарий @ #{@event.title}"
+    mail to: email, subject: default_i18n_subject(title: @event.title)
   end
 
   def photo(photo, email)
@@ -31,6 +31,6 @@ class EventMailer < ApplicationMailer
     @user = photo.user
     @photo = photo.photo.variant(resize_to_fit: [500, 500])
 
-    mail to: email, subject: "Новая фотография @ #{@event.title}"
+    mail to: email, subject: default_i18n_subject(title: @event.title)
   end
 end
