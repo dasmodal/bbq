@@ -60,7 +60,6 @@ ru:
     events:
       delete_action: 'Удалить'
       delete_confirm: 'Вы уверены что хотите удалить событие?'
-      change: 'Редактирование события'
       change_action: 'Изменить'
     photos:
       added: 'Добавленно'
@@ -69,10 +68,14 @@ ru:
       will_go: 'Пойдут'
       i_will_go: 'Я пойду'
   form_errors:
-    one: '%{count} ошибка'
-    few: '%{count} ошибки'
-    many: '%{count} ошибок'
+    one: 'В вашей форме %{count} ошибка'
+    few: 'В вашей форме %{count} ошибки'
+    many: 'В вашей форме %{count} ошибок'
   forms:
+    events:
+      create: 'Создать'
+      to_home_page: 'на главную'
+      or: 'или'
     users:
       sign_up: 'Регистрация'
       log_in: 'Войти'
@@ -119,3 +122,11 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+  events:
+    index:
+      title: 'События'
+      create_event: 'Создать событие'
+    new:
+      creating_event: 'Создание события'
+    edit:
+      changing_event: 'Редактирование события'
