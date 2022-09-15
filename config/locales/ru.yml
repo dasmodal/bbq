@@ -136,3 +136,12 @@ ru:
       creating_event: 'Создание события'
     edit:
       changing_event: 'Редактирование события'
+  users:
+    edit:
+      changing_profile: 'Редактирование профиля'
+    show:
+      organized: 'Организовал:'
+      not_organized_events: 'Пользователь пока не организовал ни одного события'
+      change_profile: 'Редактировать профиль'
+    form:
+      save: 'Сохранить'

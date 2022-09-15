@@ -1,7 +1,7 @@
 <div class="row mb-4">
   <div class="col">
     <%= form_with(model: user, html: {multipart: true}) do |form| %>
-      <%= render 'error_messages', user: user %>
+      <%= render partial: 'partials/form_errors', locals: {model: user} %>
 
       <div class="mb-3">
         <%= form.label :name, class: 'form-lable' %>
@@ -16,7 +16,7 @@
         <%= form.file_field :avatar, class: 'form-control' %>
       </div>
       <div class="actions mb-3">
-        <%= form.submit class: 'btn btn-primary' %>
+        <%= form.submit t('.save'),class: 'btn btn-primary' %>
       </div>
 
       <div>
