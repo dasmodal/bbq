@@ -14,6 +14,7 @@ ActiveStorage.start()
 
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
+import '../scripts/event-lightbox.js'
 import '../stylesheets/application'
 import '../scripts/event-datepicker.js'
 

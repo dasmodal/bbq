@@ -31,6 +31,10 @@ module ApplicationHelper
     end
   end
 
+  def thumb200(photo)
+    photo.variant(resize_to_fit: [200, 200])
+  end
+
   def sample_event_photo(event)
     # TODO / for event photo, choice random if many photos
 

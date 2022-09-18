@@ -1,0 +1,11 @@
+<div class="col-md-3 mb-2 img-wrap">
+  <% footer = "#{t('.added')}: #{link_to photo.user.name, photo.user} " %>
+  <% if current_user_can_edit?(photo) %>
+    <% footer << "#{link_to bootstrap_icon('trash', fill: 'red'),
+    event_photo_path(photo.event, photo), method: :delete, data: { confirm: t('.destroy_confirm') }}" %>
+  <% end %>
+  <a href="<%= url_for(photo.photo) %>" class="lightbox" data-gallery="event-photo"
+    data-footer="<%= footer %>">
+    <img src="<%= url_for(thumb200(photo.photo)) %>" alt="" class="img-fluid">
+  </a>
+</div>

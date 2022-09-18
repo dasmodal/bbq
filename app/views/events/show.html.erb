@@ -34,9 +34,12 @@
 
   <div class="row mb-5">
     <div class="col-md-8">
-      <% if @event.photos.exists? %>
-        <%= render partial: 'events/carousel', locals: { photos: @event.photos } %>
-      <% end %>
+      <div class="row">
+        <% if @event.photos.exists? %>
+          <h4><%= t('.event_photos') %>:</h4>
+          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+        <% end %>
+      </div>
       <% if current_user %>
         <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
       <% end %>
