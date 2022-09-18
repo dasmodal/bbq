@@ -1,7 +1,7 @@
 import Lightbox from 'bs5-lightbox'
 
 const options = {
-  size: 'lg'
+  size: 'xl'
 }
 
 document.addEventListener('turbolinks:load', () => {
