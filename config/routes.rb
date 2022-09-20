@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :photos, only: %i[create destroy]
 
     post :show, on: :member
+    delete :delete_bg_image, on: :member
   end
   resources :users, only: %i[show edit update]
 end

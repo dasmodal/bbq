@@ -76,6 +76,7 @@ ru:
       create: 'Создать'
       to_home_page: 'на главную'
       or: 'или'
+      default_bg: 'Сбросить фон'
     users:
       sign_up: 'Регистрация'
       log_in: 'Войти'

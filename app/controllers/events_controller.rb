@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
-  before_action :set_event, only: %i[show]
+  before_action :set_event, only: %i[show delete_bg_image]
   before_action :set_current_user_event, only: %i[edit update destroy]
   before_action :password_quard!, only: %i[show]
 
@@ -39,6 +39,10 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     redirect_to events_url, notice: I18n.t('controllers.events.destroyed')
+  end
+
+  def delete_bg_image
+    @event.bg_photo.purge
   end
 
   private
