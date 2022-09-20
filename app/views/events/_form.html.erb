@@ -42,7 +42,8 @@
   </div>
 
   <div class="my-3">
-    <%= form.submit t('forms.events.create'), class: 'btn btn-primary' %>
+    <%= form.submit event.persisted? ? t('forms.events.update') : t('forms.events.create'),
+      class: 'btn btn-primary' %>
     <%= t('forms.events.or') %> <%= link_to t('forms.events.to_home_page'), :back %>
   </div>
 <% end %>

@@ -74,6 +74,7 @@ ru:
   forms:
     events:
       create: 'Создать'
+      update: 'Обновить'
       to_home_page: 'на главную'
       or: 'или'
       default_bg: 'Сбросить фон'
