@@ -31,11 +31,6 @@
     <%= form.file_field :bg_photo, class: 'form-control' %>
   </div>
 
-  <div class="mt-2">
-    <%= form.label :photos %>
-    <%= form.file_field :photos, class: 'form-control' %>
-  </div>
-
   <div class="my-3">
     <%= form.submit t('forms.events.create'), class: 'btn btn-primary' %>
     <%= t('forms.events.or') %> <%= link_to t('forms.events.to_home_page'), :back %>
