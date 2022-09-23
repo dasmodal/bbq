@@ -35,7 +35,7 @@
       <% if event.bg_photo.attached? %>
         <div>
           <%= link_to t('forms.events.default_bg'), delete_bg_image_event_path(@event),
-            method: :delete, class: 'btn btn-danger' %>
+            method: :patch, class: 'btn btn-danger' %>
         </div>
       <% end %>
     </div>

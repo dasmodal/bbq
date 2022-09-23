@@ -42,7 +42,10 @@ class EventsController < ApplicationController
   end
 
   def delete_bg_image
-    @event.bg_photo.purge
+    if current_user_can_edit?(@event)
+      @event.bg_photo.purge
+      render :edit
+    end
   end
 
   private
