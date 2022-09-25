@@ -31,7 +31,10 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'letter_opener'
+  gem 'capistrano'
   gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-passenger'
 end
 
 group :production do
