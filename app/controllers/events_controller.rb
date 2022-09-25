@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, only: %i[show delete_bg_image]
-  before_action :set_current_user_event, only: %i[edit update destroy]
+  before_action :set_current_user_event, only: %i[edit update destroy delete_bg_image]
   before_action :password_quard!, only: %i[show]
 
   def index
@@ -42,10 +42,8 @@ class EventsController < ApplicationController
   end
 
   def delete_bg_image
-    if current_user_can_edit?(@event)
-      @event.bg_photo.purge
-      render :edit
-    end
+    @event.bg_photo.purge
+    redirect_to @event, notice: I18n.t('controllers.events.bg_destroyed')
   end
 
   private
