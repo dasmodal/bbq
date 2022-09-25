@@ -10,7 +10,18 @@ set :log_level, :info
 append :linked_files, "config/master.key"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
 
+before "deploy:assets:precompile", "deploy:yarn_install"
+
 namespace :deploy do
+
+  desc "Run rake yarn_install"
+  task :yarn_install do
+    on roles(:app) do
+      within release_path do
+        execute("cd #{release_path} && yarn install")
+      end
+    end
+  end
 
   desc "Restart application"
   task :restart do
