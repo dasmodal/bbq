@@ -17,6 +17,7 @@ gem 'bootstrap-icons-helper'
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
+gem 'pundit'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
