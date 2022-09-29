@@ -12,14 +12,14 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    pin_in_cookies = @user.cookies.permanent["events_#{@record.id}_pincode"]
+    pin_in_cookies = @user.cookies["events_#{@record.id}_pincode"]
 
     return true if @record.pincode.blank?
     return true if is_user_event_author?
     return true if @record.pincode_valid?(pin_in_cookies)
 
     if @user.pincode.present? && @record.pincode_valid?(@user.pincode)
-      @user.cookies.permanent["events_#{@record.id}_pincode"] = @user.pincode
+      @user.cookies["events_#{@record.id}_pincode"] = @user.pincode
     end
   end
 
