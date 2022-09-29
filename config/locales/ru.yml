@@ -154,3 +154,5 @@ ru:
       change_profile: 'Редактировать профиль'
     form:
       save: 'Сохранить'
+  pundit:
+    not_authorized: 'Нет доступа'
