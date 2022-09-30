@@ -9,6 +9,10 @@ class EventsController < ApplicationController
   end
 
   def show
+    if @event.pincode.present? && @event.pincode_valid?(params[:pincode])
+      cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
+    end
+
     begin
       authorize @event
     rescue Pundit::NotAuthorizedError
