@@ -1,6 +1,10 @@
 class EventPolicy < ApplicationPolicy
-  def edit?
-    is_user_event_author?
+  def index?
+    true
+  end
+
+  def create?
+    true
   end
 
   def update?
@@ -17,6 +21,10 @@ class EventPolicy < ApplicationPolicy
     return true if @record.pincode.blank?
     return true if is_user_event_author?
     return true if @record.pincode_valid?(pin_in_cookies)
+  end
+
+  def delete_bg_image?
+    is_user_event_author?
   end
 
   class Scope < Scope

@@ -1,10 +1,12 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
-  before_action :set_event, only: %i[edit update destroy show]
+  before_action :set_event, only: %i[edit update destroy show delete_bg_image]
 
-  after_action :verify_authorized, only: %i[edit update destroy show]
+  after_action :verify_authorized
 
   def index
+    authorize Event
+
     @events = Event.all
   end
 
@@ -22,6 +24,8 @@ class EventsController < ApplicationController
   end
 
   def new
+    authorize Event
+
     @event = current_user.events.build
   end
 
@@ -30,6 +34,8 @@ class EventsController < ApplicationController
   end
 
   def create
+    authorize Event
+
     @event = current_user.events.build(event_params)
 
     if @event.save
@@ -57,6 +63,8 @@ class EventsController < ApplicationController
   end
 
   def delete_bg_image
+    authorize @event
+
     @event.bg_photo.purge
     redirect_to @event, notice: I18n.t('controllers.events.bg_destroyed')
   end
