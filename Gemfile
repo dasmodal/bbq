@@ -18,6 +18,8 @@ gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'pundit'
+gem 'omniauth'
+gem 'omniauth-vkontakte'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
