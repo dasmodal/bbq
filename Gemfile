@@ -19,6 +19,7 @@ gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'pundit'
 gem 'omniauth'
+gem "omniauth-rails_csrf_protection"
 gem 'omniauth-vkontakte'
 
 gem 'bootsnap', '>= 1.4.4', require: false
