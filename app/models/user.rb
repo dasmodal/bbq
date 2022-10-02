@@ -1,7 +1,9 @@
+require 'open-uri'
+
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[vkontakte facebook]
+         :omniauthable, omniauth_providers: %i[vkontakte facebook google_oauth2]
 
   has_many :events
   has_many :comments, dependent: :destroy
@@ -21,6 +23,23 @@ class User < ApplicationRecord
 
   def self.find_for_facebook_oauth(access_token)
     binding.pry
+  end
+
+  def self.find_for_google_oauth2(access_token)
+    email = access_token.info.email
+    user = where(email: email).first
+    image = URI.parse(access_token.info.image).open
+
+    return user if user.present?
+
+    provider = access_token.provider
+    uid = access_token.uid
+
+    where(uid: uid, provider: provider).first_or_create! do |user|
+      user.email = email
+      user.password = Devise.friendly_token.first(16)
+      user.avatar.attach(io: image, filename: 'avatar.jpg')
+    end
   end
 
   private
