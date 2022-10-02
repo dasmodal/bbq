@@ -1,6 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def vkontakte
-    binding.pry
     @user = User.find_for_vkontakte_oauth(request.env["omniauth.auth"])
 
     if @user.persisted?
@@ -13,7 +12,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def facebook
-    binding.pry
     @user = User.find_for_facebook_oauth(request.env["omniauth.auth"])
 
     if @user.persisted?

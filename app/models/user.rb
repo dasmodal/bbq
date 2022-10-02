@@ -17,8 +17,21 @@ class User < ApplicationRecord
 
   after_commit :link_subscriptions, on: :create
 
-  def self.find_for_vkontakte_oauth
-    binding.pry
+  def self.find_for_vkontakte_oauth(access_token)
+    email = access_token.info.email
+    user = where(email: email).first
+    image = URI.parse(access_token.info.image).open
+
+    return user if user.present?
+
+    provider = access_token.provider
+    uid = access_token.uid
+
+    where(uid: uid, provider: provider).first_or_create! do |user|
+      user.email = email
+      user.password = Devise.friendly_token.first(16)
+      user.avatar.attach(io: image, filename: 'avatar.jpg')
+    end
   end
 
   def self.find_for_facebook_oauth(access_token)
