@@ -278,9 +278,6 @@ Devise.setup do |config|
     token_params: { parse: :json },
     scope: 'email',
     redirect_uri: 'http://localhost:3000/users/auth/vkontakte/callback'
-  config.omniauth :facebook,
-    Rails.application.credentials.dig(:development, :omniauth_facebook_id),
-    Rails.application.credentials.dig(:development, :omniauth_facebook_secret_key)
   config.omniauth :google_oauth2,
     Rails.application.credentials.dig(:development, :omniauth_google_id),
     Rails.application.credentials.dig(:development, :omniauth_google_secret_key),
