@@ -278,6 +278,9 @@ Devise.setup do |config|
     token_params: { parse: :json },
     scope: 'email',
     redirect_uri: 'https:localhost:3000/users/auth/vkontakte/callback'
+  config.omniauth :facebook,
+    Rails.application.credentials.dig(:development, :omniauth_facebook_id),
+    Rails.application.credentials.dig(:development, :omniauth_facebook_secret_key)
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

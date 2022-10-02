@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:vkontakte]
+         :omniauthable, omniauth_providers: %i[vkontakte facebook]
 
   has_many :events
   has_many :comments, dependent: :destroy
@@ -16,6 +16,10 @@ class User < ApplicationRecord
   after_commit :link_subscriptions, on: :create
 
   def self.find_for_vkontakte_oauth
+    binding.pry
+  end
+
+  def self.find_for_facebook_oauth(access_token)
     binding.pry
   end
 
