@@ -277,7 +277,7 @@ Devise.setup do |config|
     Rails.application.credentials.dig(:development, :omniauth_vk_secret_key),
     token_params: { parse: :json },
     scope: 'email',
-    redirect_uri: 'http:localhost:3000/users/auth/vkontakte/callback'
+    redirect_uri: 'http://localhost:3000/users/auth/vkontakte/callback'
   config.omniauth :facebook,
     Rails.application.credentials.dig(:development, :omniauth_facebook_id),
     Rails.application.credentials.dig(:development, :omniauth_facebook_secret_key)
