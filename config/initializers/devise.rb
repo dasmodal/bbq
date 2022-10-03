@@ -272,6 +272,16 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :vkontakte,
+    Rails.application.credentials.dig(:development, :omniauth_vk_id), 
+    Rails.application.credentials.dig(:development, :omniauth_vk_secret_key),
+    token_params: { parse: :json },
+    scope: 'email',
+    redirect_uri: 'http://localhost:3000/users/auth/vkontakte/callback'
+  config.omniauth :google_oauth2,
+    Rails.application.credentials.dig(:development, :omniauth_google_id),
+    Rails.application.credentials.dig(:development, :omniauth_google_secret_key),
+    redirect_uri: 'http://localhost:3000/users/auth/google_oauth2/callback'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
