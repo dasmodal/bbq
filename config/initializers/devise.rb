@@ -272,22 +272,17 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  REDIRECT_HOST = if Rails.env == 'production'
-    'grillmeal.com'
-  else
-    'localhost:3000'
-  end
 
   config.omniauth :vkontakte,
-    Rails.application.credentials.dig(:"#{Rails.env}", :omniauth_vk_id),
-    Rails.application.credentials.dig(:"#{Rails.env}", :omniauth_vk_secret_key),
+    Rails.application.credentials.dig(:production, :omniauth_vk_id),
+    Rails.application.credentials.dig(:production, :omniauth_vk_secret_key),
     token_params: { parse: :json },
     scope: 'email',
-    redirect_uri: "http://#{REDIRECT_HOST}/users/auth/vkontakte/callback"
+    redirect_uri: "http://grillmeal.ru/users/auth/vkontakte/callback"
   config.omniauth :google_oauth2,
-    Rails.application.credentials.dig(:"#{Rails.env}", :omniauth_google_id),
-    Rails.application.credentials.dig(:"#{Rails.env}", :omniauth_google_secret_key),
-    redirect_uri: "http://#{REDIRECT_HOST}/users/auth/google_oauth2/callback"
+    Rails.application.credentials.dig(:production, :omniauth_google_id),
+    Rails.application.credentials.dig(:production, :omniauth_google_secret_key),
+    redirect_uri: "http://grillmeal.ru/users/auth/google_oauth2/callback"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
