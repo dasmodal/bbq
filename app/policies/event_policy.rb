@@ -4,7 +4,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    @user.user.present?
   end
 
   def update?
@@ -28,10 +28,9 @@ class EventPolicy < ApplicationPolicy
   end
 
   class Scope < Scope
-    # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
   end
 
   private
