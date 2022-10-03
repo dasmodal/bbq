@@ -8,9 +8,11 @@ RSpec.describe EventPolicy, type: :policy do
 
   let(:user) { UserContext.new({ user: factory_user, pincode: '', cookies: {}}) }
   let(:another_user) { UserContext.new({ user: factory_another_user, pincode: '', cookies: {}}) }
-  let(:another_user_know_pincode) { UserContext.new({ user: factory_another_user, pincode: '123', cookies: {}}) }
+  let(:another_user_know_pincode) { UserContext.new({ user: factory_another_user, pincode: '123',
+    cookies: {"events_1_pincode" => '123'}}) }
   let(:anonymous) { UserContext.new({ user: nil, pincode: '', cookies: {}}) }
-  let(:anonymous_know_pincode) { UserContext.new({ user: nil, pincode: '123', cookies: {}}) }
+  let(:anonymous_know_pincode) { UserContext.new({ user: nil, pincode: '123',
+    cookies: {"events_1_pincode" => '123'}}) }
 
   let(:event) { FactoryBot.create(:event, user: factory_user) }
   let(:event_with_pincode) { FactoryBot.create(:event, user: factory_user, pincode: '123') }
