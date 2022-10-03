@@ -27,7 +27,7 @@ class User < ApplicationRecord
     uid = access_token.uid
 
     image = case provider
-              when 'google' then URI.parse(access_token.info.image).open
+              when 'google_oauth2' then URI.parse(access_token.info.image).open
               when 'vkontakte' then URI.parse(access_token.extra.raw_info.photo_400_orig).open
             end
 
