@@ -20,12 +20,16 @@ class User < ApplicationRecord
   def self.from_omniauth(access_token)
     email = access_token.info.email
     user = where(email: email).first
-    image = URI.parse(access_token.info.image).open
 
     return user if user.present?
 
     provider = access_token.provider
     uid = access_token.uid
+
+    image = case provider
+              when 'google' then URI.parse(access_token.info.image).open
+              when 'vkontakte' then URI.parse(access_token.extra.raw_info.photo_400_orig).open
+            end
 
     where(uid: uid, provider: provider).first_or_create! do |user|
       user.email = email
