@@ -21,7 +21,7 @@ gem 'pundit'
 gem 'omniauth'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-vkontakte', '~> 1.7.1'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-google-oauth2', '~> 1.0.1'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
