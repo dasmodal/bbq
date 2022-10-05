@@ -4,7 +4,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def create?
-    @user.user.present?
+    @user.present?
   end
 
   def update?
@@ -16,7 +16,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    pin_in_cookies = @user.cookies["events_#{@record.id}_pincode"]
+    pin_in_cookies = @cookies["events_#{@record.id}_pincode"]
 
     return true if @record.pincode.blank?
     return true if is_user_event_author?
@@ -36,6 +36,6 @@ class EventPolicy < ApplicationPolicy
   private
 
   def is_user_event_author?
-    @user.user == @record.user
+    @user == @record.user
   end
 end

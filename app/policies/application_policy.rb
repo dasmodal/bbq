@@ -3,8 +3,9 @@
 class ApplicationPolicy
   attr_reader :user, :record
 
-  def initialize(user, record)
-    @user = user
+  def initialize(context, record)
+    @cookies = context.cookies
+    @user = context.user
     @record = record
   end
 

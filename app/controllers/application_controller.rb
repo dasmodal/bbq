@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def pundit_user
-    UserContext.new({user: current_user, pincode: params[:pincode], cookies: cookies})
+    UserContext.new({user: current_user, cookies: cookies})
   end
 
   private
