@@ -49,3 +49,28 @@ bundle exec rails s
 ```
 bin/webpack-dev-server
 ```
+## Credentials
+For correct work allside functions (Google and Vk oauth, YandexStroage, Maijet, YandexMap as example), you need to remove `config/credentials.yml.enc` and create new credentials:
+
+```
+EDITOR=vi rails credentials:edit
+```
+and write new secret keys:
+
+```
+production:
+  omniauth_vk_id: xxxxxxxxxxxxxx
+  omniauth_vk_secret_key: xxxxxxxxxxxxxx
+  omniauth_google_id: xxxxxxxxxxxxxx
+  omniauth_google_secret_key: xxxxxxxxxxxxxx
+yc:
+  access_key_id: xxxxxxxxxxxxxx
+  secret_access_key: xxxxxxxxxxxxxx
+mailjet:
+  api_key: xxxxxxxxxxxxxx
+  secret_key: xxxxxxxxxxxxxx
+  sender_email: xxxxxxxxxxxxxx
+yandex_map:
+  api_key: xxxxxxxxxxxxxx
+```
+`master.key` will be create automatically.
