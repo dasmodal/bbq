@@ -2,7 +2,7 @@ lock "~> 3.17.1"
 
 set :application, "grillmeal"
 set :repo_url, "git@github.com:dasmodal/bbq.git"
-set :branch, 'add_capistrano'
+set :branch, 'main'
 set :deploy_to, "/home/deploy/www/#{fetch :application}"
 
 set :log_level, :info
