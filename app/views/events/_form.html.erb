@@ -32,7 +32,8 @@
       <div>
         <%= form.file_field :bg_photo, class: 'form-control' %>
       </div>
-      <% if event.bg_photo.attached? %>
+      <% if event.bg_photo.attached? &&
+            event.bg_photo.persisted? %>
         <div>
           <%= link_to t('forms.events.default_bg'), delete_bg_image_event_path(@event),
             method: :patch, class: 'btn btn-danger' %>
