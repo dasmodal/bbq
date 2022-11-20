@@ -9,6 +9,8 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <link rel="icon" href="<%= asset_pack_path 'media/images/barbecue.png' %>" title="Kason Koo" type="image/x-icon">
+
     <script src="https://api-maps.yandex.ru/2.1/?apikey=<%= Rails.application.credentials.dig(:yandex_map, :api_key) %>&lang=ru_RU" type="text/javascript">
     </script>
   </head>
