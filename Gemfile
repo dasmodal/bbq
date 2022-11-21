@@ -44,6 +44,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
   gem 'capistrano-yarn'
+  gem 'capistrano-sidekiq'
 end
 
 group :production do
