@@ -22,7 +22,7 @@ gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-vkontakte', '~> 1.7.1'
 gem 'omniauth-google-oauth2', '~> 1.0.1'
-gem 'sidekiq'
+gem 'resque'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -43,7 +43,6 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
-  gem 'capistrano-sidekiq'
   gem 'capistrano-yarn'
 end
 
