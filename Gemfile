@@ -43,6 +43,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
+  gem 'capistrano-sidekiq'
   gem 'capistrano-yarn'
 end
 
